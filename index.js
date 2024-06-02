@@ -31,7 +31,10 @@ document.addEventListener('keydown', (e) => {
   if (e.key === "ArrowRight") rightScore.textContent = Number(rightScore.textContent) + 1;
   if (e.key === "ArrowLeft") leftScore.textContent = Number(leftScore.textContent) + 1;
 
-  if (e.code === "Space") resetScores();
+  if (e.code === "Space") {
+    e.preventDefault();
+    resetScores()
+  };
 });
 
 resetBtn.addEventListener('click', () => {
